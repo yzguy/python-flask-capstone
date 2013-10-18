@@ -1,12 +1,11 @@
-After you clone you will need to setup a
-virtualenv in the Flask-Pres directory, 
-then you must activate that virtualenv, 
-and install the following:
-
-flask
-flask-wtf
-flask-sqlalchemy
-flask-login
+git clone https://github.com/zero1three/Flask-Pres.git
+cd Flask-Pres/
+virtualenv venv
+venv\Scripts\activate
+pip install flask
+pip install flask-wtf
+pip install flask-login
+pip install flask-sqlalchemy
 
 
 
