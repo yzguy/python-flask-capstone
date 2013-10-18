@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Login</h2>
+<div class="jumbo">
+<form action="{{ url_for('login') }}" method="post">
+{{ form.hidden_tag() }}
+
+{% if incorrect %}
+<h3 style="color: red;">Incorrect Username or Password</h3>
+{% else %}
+<h3>Enter Credentials Below</h3>
+{% endif %}
+
+<table style="margin: auto;">
+	<tr>
+		<td colspan="2">
+		{% for error in form.errors.username %}
+			<span style="color: red;">[{{error}}]</span>
+		{% endfor %}
+		</td>
+	</tr>
+	<tr>
+		<td>Username:</td>
+		<td>{{ form.username(size=20) }}</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		{% for error in form.errors.password %}
+			<span style="color: red;">[{{error}}]</span>
+		{% endfor %}		
+		</td>
+	</td>
+	<tr>
+		<td>Password</td>
+		<td>{{ form.password(size=20) }}</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>{{ form.submit }}</td>
+	</tr>
+</table>
+</form>
+</div>
+{% endblock %}

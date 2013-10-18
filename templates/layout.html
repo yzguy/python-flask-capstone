@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+    <title>{{ title }} - Flask Presentation</title>
+    {% else %}
+    <title>Flask Presentation</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Flask Presentation</h1>
+            <strong>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}" target="_self">Home</a>
+					<li><a href="{{ url_for('register') }}" target="_self">Register</a>
+					<li><a href="{{ url_for('login') }}" target="_self">Login</a>
+                </ul>
+            </nav>
+            </strong>
+        </div>
+    </header>
+
+    <div class="container">
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+			<ul>
+				<li>{{ message }}</li>
+			</ul>
+			{% endfor %}
+		{% endif %}
+    	{% endwith %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

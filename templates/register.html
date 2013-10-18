@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Register</h2>
+<div class="jumbo">
+<form action="{{ url_for('register') }}" method="post">
+{{ form.hidden_tag() }}
+<h3>Enter Information Below</h3>
+<table style="margin: auto;">
+	<tr>
+		<td>First Name:</td>
+		<td>{{ form.firstname(size=20) }}</td>
+	</tr>
+	<tr>
+		<td>Last Name:</td>
+		<td>{{ form.lastname(size=20) }}</td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td>{{ form.email(size=20) }}</td>
+	</tr>
+	<tr>
+		<td>Username:</td>
+		<td>{{ form.username(size=20) }}</td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td>{{ form.password(size=20) }}</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>{{ form.submit }}</td>
+	</tr>
+</table>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<a style="float: right;" href="{{ url_for('logout') }}">Logout</a>
+	<h3>You have successfully logged in</h3>
+  	<h4>Welcome, {{ firstname }}</h4>
+	<p>First Name: {{ firstname }}</p>
+	<p>Last Name: {{ lastname }}</p>
+	<p>Username: {{ username }}</p>
+	<p>Email: {{ email }}</p>
+{% endblock %}
