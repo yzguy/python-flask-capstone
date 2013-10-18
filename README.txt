@@ -7,5 +7,5 @@ pip install flask-wtf
 pip install flask-login
 pip install flask-sqlalchemy
 
-
+python run.py
 
