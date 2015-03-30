@@ -89,7 +89,7 @@ class User(db.Model):
 @app.route('/')
 @app.route('/index')
 def index():
-	'returns a rendered template back to the user
+	#returns a rendered template back to the user
 	return render_template('index.html',
 		title = 'Home')
 
