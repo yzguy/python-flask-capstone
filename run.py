@@ -1,5 +1,5 @@
 #Imports for Flask, Flask-WTF, Flask-Login, Flask-SQLAlchemy
-from flask import Flask, render_template, url_for, redirect, flash, session, request
+from flask import Flask, render_template, url_for, redirect, session, request
 from flask.ext.wtf import Form
 from wtforms import TextField, PasswordField, SubmitField
 from wtforms.validators import Required
